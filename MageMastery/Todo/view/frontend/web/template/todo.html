@@ -3,8 +3,9 @@
         <a data-bind="
             attr: {
                 class: 'status ' + (task().status ? 'complete' : 'open')
-            }
-         " class="status open">Open</a>
+            },
+            click: switchStatus
+         "></a>
         <span class="label" translate="task().label"/>
     </li>
 </ul>

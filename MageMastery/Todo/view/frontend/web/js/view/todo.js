@@ -1,4 +1,7 @@
-define(['uiComponent'], function (Component) {
+define([
+    'uiComponent',
+    'jquery'
+    ], function (Component) {
     'use strict';
 
     return Component.extend({
@@ -15,6 +18,19 @@ define(['uiComponent'], function (Component) {
             this._super().observe(['tasks']);
 
             return this;
+        },
+
+        switchStatus: function (data, event) {
+            const taskId = $(event.target).data('id');
+
+            var items = this.tasks().map(function (task) {
+                if (task.id === taskId) {
+                    task.status = !task.status;
+                }
+                return task
+            });
+
+            this.tasks(items);
         },
 
     });
