@@ -7,8 +7,8 @@ define([
 
   return Component.extend({
     defaults: {
-      newTaskLabel: ' ',
-      buttonSelector: ' ',
+      newTaskLabel: '',
+      buttonSelector: '#add-new-task-button',
       tasks: [
         {id: 1, label: "Task 1", status: false},
         {id: 2, label: "Task 2", status: false},
@@ -69,6 +69,13 @@ define([
         status: false
       });
       this.newTaskLabel('');
+    },
+
+    checkKey: function (data, event) {
+      if (event.keyCode === 13) {
+          event.preventDefault();
+          $(this.buttonSelector).click();
+      }
     },
   });
 });
