@@ -73,8 +73,8 @@ define([
 
     checkKey: function (data, event) {
       if (event.keyCode === 13) {
-          event.preventDefault();
-          $(this.buttonSelector).click();
+        event.preventDefault();
+        $(this.buttonSelector).click();
       }
     },
   });

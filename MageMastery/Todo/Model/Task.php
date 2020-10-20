@@ -1,17 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: carlsimpson
- * Date: 20/10/2020
- * Time: 11:46
- */
 
 namespace MageMastery\Todo\Model;
 
+use Magento\Framework\Model\AbstractModel;
+use MageMastery\Todo\Model\ResourceModel\Task as TaskResource;
 
 class Task extends AbstractModel
 {
-    protected function _construct() {
+    protected function _construct()
+    {
         $this->_init(TaskResource::class);
     }
 }
