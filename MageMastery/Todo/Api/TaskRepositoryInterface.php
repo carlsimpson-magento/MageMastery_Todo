@@ -1,19 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: carlsimpson
- * Date: 20/10/2020
- * Time: 17:36
- */
-
 
 namespace MageMastery\Todo\Api;
+
+use MageMastery\Todo\Api\Data\TaskSearchResultInterface;
+use Magento\Framework\Api\SearchCriteriaInterface;
 
 /**
  * @api
  */
 interface TaskRepositoryInterface
 {
-    public function getList();
+    public function getList(SearchCriteriaInterface $searchCriteria): TaskSearchResultInterface;
     public function get(int $taskId);
 }
