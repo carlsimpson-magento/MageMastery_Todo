@@ -70,5 +70,3 @@ class TaskRepository implements TaskRepositoryInterface
         return $object;
     }
 }
-
-//Lesson 36: Creating Task Repository service - Part 2
